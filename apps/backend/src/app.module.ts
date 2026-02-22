@@ -6,6 +6,7 @@ import { File } from './entities/file.entity';
 import { Contact } from './entities/contact.entity';
 import { Share } from './entities/share.entity';
 import { Invite } from './entities/invite.entity';
+import { FilesModule } from './files/files.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { Invite } from './entities/invite.entity';
       entities: [File, Contact, Share, Invite],
       synchronize: true,
     }),
+    FilesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

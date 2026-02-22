@@ -16,6 +16,12 @@ export class File {
   @Column()
   name: string;
 
+  @Column({ nullable: true, type: 'text' })
+  title: string | null;
+
+  @Column({ nullable: true, type: 'text' })
+  author: string | null;
+
   @Column()
   path: string;
 
@@ -27,6 +33,15 @@ export class File {
 
   @Column({ type: 'text', default: FileSection.OTHER })
   section: FileSection;
+
+  @Column({ nullable: true, type: 'text' })
+  coverPath: string | null;
+
+  @Column({ nullable: true, type: 'text' })
+  collectionId: string | null;
+
+  @Column({ nullable: true, type: 'text' })
+  collectionName: string | null;
 
   @CreateDateColumn()
   createdAt: Date;
